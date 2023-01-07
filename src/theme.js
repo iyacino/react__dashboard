@@ -20,7 +20,7 @@ export const tokens = (mode) =>(
                 100: "#d0d1d5",
                 200: "#a1a4aa",
                 300: "#727680",
-                400: "#434955",
+                400: "#1F2A40",
                 500: "#141b2b",
                 600: "#101622",
                 700: "#0c101a",
@@ -49,7 +49,7 @@ export const tokens = (mode) =>(
                 800: "#58201e",
                 900: "#2c100f"
             }, 
-            BlueAccent: {
+            blueAccent: {
                 100: "#e1e2fe",
                 200: "#c3c6fd",
                 300: "#a4a9fc",
@@ -125,7 +125,7 @@ export const themeSettings = (mode) => {
     return {
         palette: {
             mode: mode, 
-            ...(mode === dark
+            ...(mode === 'dark'
                 ? {
                     primary: {
                         main: colors.primary[500],
@@ -203,6 +203,6 @@ export const useMode = () =>{
         }), 
         []
     );
-    const theme = useMemo(() => createTheme(themeSettings(mode), [mode]));
+    const theme = useMemo(() => createTheme(themeSettings(mode)), [mode]);
     return [theme, colorMode]
 }
