@@ -18,8 +18,7 @@ const Form = () => {
       <Formik
         onSubmit={handleFormSubmit}
         initialValues={initialValues}
-        validationSchema={checkoutSchema}
-      >
+        validationSchema={checkoutSchema}>
         {({
           values,
           errors,
@@ -27,7 +26,7 @@ const Form = () => {
           handleBlur,
           handleChange,
           handleSubmit,
-        }) => (
+          }) => (
           <form onSubmit={handleSubmit}>
             <Box
               display="grid"
@@ -35,8 +34,7 @@ const Form = () => {
               gridTemplateColumns="repeat(4, minmax(0, 1fr))"
               sx={{
                 "& > div": { gridColumn: isNonMobile ? undefined : "span 4" },
-              }}
-            >
+              }}>
               <TextField
                 fullWidth
                 variant="filled"
@@ -135,13 +133,11 @@ const checkoutSchema = yup.object().shape({
   firstName: yup.string().required("required"),
   lastName: yup.string().required("required"),
   email: yup.string().email("invalid email").required("required"),
-  contact: yup
-    .string()
-    .matches(phoneRegExp, "Phone number is not valid")
-    .required("required"),
+  contact: yup.string().matches(phoneRegExp, "Phone number is not valid").required("required"),
   address1: yup.string().required("required"),
   address2: yup.string().required("required"),
 });
+
 const initialValues = {
   firstName: "",
   lastName: "",

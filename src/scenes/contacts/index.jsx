@@ -6,6 +6,7 @@ import Header from "../../components/Header";
 import { useTheme } from '@mui/material'
 
 const Contacts = () => {
+  
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
   const columns = [
@@ -62,7 +63,7 @@ const Contacts = () => {
       <Header title="Contacts" subtitle="List of Contacts for Future Reference" />
       <Box
         m="40px 0 0 0"
-        height="75vh"
+        height="70vh"
         sx={{
           "& .MuiDataGrid-root": {
             border: "none",
