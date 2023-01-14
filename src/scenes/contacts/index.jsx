@@ -3,21 +3,15 @@ import { DataGrid, GridToolbar } from "@mui/x-data-grid";
 import { tokens } from "../../theme";
 import { mockDataContacts } from "../../data/mockData";
 import Header from "../../components/Header";
-import { useTheme } from '@mui/material'
+import { useTheme } from "@mui/material";
 
 const Contacts = () => {
-  
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
+
   const columns = [
-    { 
-        field: "id", 
-        headerName: "ID",
-        flex: 0.5
-    },
-    {
-        field: "registrarId", headerName: "Registrar ID"
-    },
+    { field: "id", headerName: "ID", flex: 0.5 },
+    { field: "registrarId", headerName: "Registrar ID" },
     {
       field: "name",
       headerName: "Name",
@@ -42,25 +36,28 @@ const Contacts = () => {
       flex: 1,
     },
     {
-        field: "address",
-        headerName: "Address",
-        flex: 1,
-      },
-      {
-        field: "city",
-        headerName: "City",
-        flex: 1,
-      },
-      {
-        field: "zipCode",
-        headerName: "ZipCode",
-        flex: 1,
-      },
+      field: "address",
+      headerName: "Address",
+      flex: 1,
+    },
+    {
+      field: "city",
+      headerName: "City",
+      flex: 1,
+    },
+    {
+      field: "zipCode",
+      headerName: "Zip Code",
+      flex: 1,
+    },
   ];
 
   return (
     <Box m="20px">
-      <Header title="Contacts" subtitle="List of Contacts for Future Reference" />
+      <Header
+        title="CONTACTS"
+        subtitle="List of Contacts for Future Reference"
+      />
       <Box
         m="40px 0 0 0"
         height="70vh"
@@ -85,14 +82,19 @@ const Contacts = () => {
             borderTop: "none",
             backgroundColor: colors.blueAccent[700],
           },
+          "& .MuiCheckbox-root": {
+            color: `${colors.greenAccent[200]} !important`,
+          },
           "& .MuiDataGrid-toolbarContainer .MuiButton-text": {
             color: `${colors.grey[100]} !important`,
-          }
+          },
         }}
       >
-        <DataGrid   rows={mockDataContacts} 
-                    columns={columns}  
-                    components={{Toolbar: GridToolbar}}/>
+        <DataGrid
+          rows={mockDataContacts}
+          columns={columns}
+          components={{ Toolbar: GridToolbar }}
+        />
       </Box>
     </Box>
   );
