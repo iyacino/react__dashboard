@@ -1,6 +1,6 @@
 # iYacino-React-Dashboard
 
-This project is a react bases dashboard that uses multiple technologies and variety of solutions.
+This project is a react-based dashboard that uses multiple technologies and variety of solutions.
 
 ## External Frameworks used
 
