@@ -2,6 +2,10 @@
 
 This project is a react-based dashboard that uses multiple technologies and variety of solutions.
 
+## Demo
+
+You can access the live demo of the dashboard at [https://iyacino-react-dashboard.netlify.app).
+
 ## External Frameworks used
 
 ### React
